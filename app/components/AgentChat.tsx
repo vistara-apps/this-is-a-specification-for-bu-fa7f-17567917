@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { usePrimaryButton } from "@coinbase/onchainkit/minikit";
+// Fix import path to use the correct module resolution
+import { usePrimaryButton } from "@coinbase/onchainkit/dist/minikit";
 
 interface Message {
   id: string;

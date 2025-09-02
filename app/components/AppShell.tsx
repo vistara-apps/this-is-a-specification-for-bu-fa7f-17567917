@@ -5,7 +5,7 @@ import {
   useMiniKit, 
   useAddFrame, 
   useOpenUrl 
-} from "@coinbase/onchainkit/minikit";
+} from "@coinbase/onchainkit/dist/minikit";
 import {
   Name,
   Identity,
