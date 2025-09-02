@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: 210 40% 96%;
+    --text: 210 40% 18%;
+    --accent: 262 71% 63%;
+    --primary: 210 40% 96%;
+    --surface: 210 40% 100%;
+    --muted: 210 15% 65%;
+    --success: 120 60% 50%;
+    --warning: 45 100% 55%;
+    --danger: 0 70% 60%;
+  }
+  
+  body {
+    @apply bg-bg text-text font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  * {
+    @apply border-border;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-accent hover:bg-accent/90 text-white px-lg py-sm rounded-lg transition-all duration-200 font-medium shadow-sm hover:shadow-md;
+  }
+  
+  .btn-secondary {
+    @apply bg-surface hover:bg-surface/80 text-text border border-gray-200 px-lg py-sm rounded-lg transition-all duration-200 font-medium shadow-sm hover:shadow-md;
+  }
+  
+  .card {
+    @apply bg-surface border border-gray-200 rounded-lg p-lg shadow-card;
+  }
+  
+  .input-field {
+    @apply bg-surface border border-gray-200 rounded-lg px-md py-sm text-text placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors;
+  }
+  
+  .chat-message {
+    @apply p-md rounded-lg max-w-[85%] break-words;
+  }
+  
+  .chat-message.user {
+    @apply bg-accent text-white ml-auto;
+  }
+  
+  .chat-message.assistant {
+    @apply bg-gray-100 text-text mr-auto;
+  }
+  
+  .market-card {
+    @apply card hover:shadow-lg transition-all duration-200 cursor-pointer border-l-4;
+  }
+  
+  .market-card.positive {
+    @apply border-l-success;
+  }
+  
+  .market-card.negative {
+    @apply border-l-danger;
+  }
+  
+  .market-card.neutral {
+    @apply border-l-muted;
+  }
+  
+  .typing-indicator {
+    @apply flex space-x-1;
+  }
+  
+  .typing-dot {
+    @apply w-2 h-2 bg-muted rounded-full animate-pulse;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
