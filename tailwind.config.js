@@ -3,42 +3,104 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        bg: 'hsl(210 40% 96%)',
-        text: 'hsl(210 40% 18%)',
-        accent: 'hsl(262 71% 63%)',
-        primary: 'hsl(210 40% 96%)',
-        surface: 'hsl(210 40% 100%)',
-        muted: 'hsl(210 15% 65%)',
-        success: 'hsl(120 60% 50%)',
-        warning: 'hsl(45 100% 55%)',
-        danger: 'hsl(0 70% 60%)',
+        bg: 'hsl(var(--bg))',
+        text: 'hsl(var(--text))',
+        accent: 'hsl(var(--accent))',
+        primary: 'hsl(var(--primary))',
+        surface: 'hsl(var(--surface))',
+        muted: 'hsl(var(--muted))',
+        success: 'hsl(var(--success))',
+        warning: 'hsl(var(--warning))',
+        danger: 'hsl(var(--danger))',
+        border: 'hsl(var(--border))',
       },
       spacing: {
-        xs: '8px',
-        sm: '8px', 
-        md: '16px',
-        lg: '24px',
-        xl: '32px',
+        xs: '0.5rem',    // 8px
+        sm: '0.75rem',   // 12px
+        md: '1rem',      // 16px
+        lg: '1.5rem',    // 24px
+        xl: '2rem',      // 32px
+        '2xl': '2.5rem', // 40px
+        '3xl': '3rem',   // 48px
       },
       borderRadius: {
-        sm: '4px',
-        md: '8px', 
-        lg: '12px',
-        xl: '16px',
+        sm: '0.25rem',   // 4px
+        md: '0.5rem',    // 8px
+        lg: '0.75rem',   // 12px
+        xl: '1rem',      // 16px
+        '2xl': '1.5rem', // 24px
       },
       boxShadow: {
+        sm: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
+        DEFAULT: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+        md: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+        lg: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+        xl: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+        '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
         card: '0 4px 12px hsla(210, 40%, 18%, 0.1)',
         glow: '0 0 20px hsla(262, 71%, 63%, 0.3)',
+        inner: 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
+        none: 'none',
       },
       animation: {
-        'fade-in': 'fadeIn 200ms ease-in-out',
-        'slide-up': 'slideUp 200ms ease-in-out',
+        'fade-in': 'fadeIn 300ms ease-in-out',
+        'slide-up': 'slideUp 300ms ease-in-out',
         'pulse-slow': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
+      fontFamily: {
+        sans: [
+          'Inter',
+          'ui-sans-serif',
+          'system-ui',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"Segoe UI"',
+          'Roboto',
+          '"Helvetica Neue"',
+          'Arial',
+          '"Noto Sans"',
+          'sans-serif',
+          '"Apple Color Emoji"',
+          '"Segoe UI Emoji"',
+          '"Segoe UI Symbol"',
+          '"Noto Color Emoji"',
+        ],
+      },
       typography: {
-        body: 'text-base leading-7',
-        display: 'text-3xl font-bold',
-        heading: 'text-xl font-semibold',
+        DEFAULT: {
+          css: {
+            maxWidth: '65ch',
+            color: 'hsl(var(--text))',
+            a: {
+              color: 'hsl(var(--accent))',
+              '&:hover': {
+                color: 'hsl(var(--accent) / 0.8)',
+              },
+            },
+            strong: {
+              color: 'hsl(var(--text))',
+            },
+            h1: {
+              color: 'hsl(var(--text))',
+            },
+            h2: {
+              color: 'hsl(var(--text))',
+            },
+            h3: {
+              color: 'hsl(var(--text))',
+            },
+            h4: {
+              color: 'hsl(var(--text))',
+            },
+            code: {
+              color: 'hsl(var(--accent))',
+            },
+            blockquote: {
+              color: 'hsl(var(--muted))',
+              borderLeftColor: 'hsl(var(--border))',
+            },
+          },
+        },
       },
     },
   },
